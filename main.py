@@ -5,13 +5,15 @@ import msgpack
 import midi_manipulation
 
 def get_files(path):
+    songs = []
     for a, b, c in os.walk(path):
         for f in c:
-            print(os.path.join(a, c))
+            songs.append(os.path.join(a, f))
+
+    return songs
 
 
 
 if __name__ == "__main__":
     path = "EDEN-midi/"
-    get_files(path)
-    #print(np.array(midi_manipulation.midiToNoteStateMatrix(files[1])))
+    songs = get_files(path)
