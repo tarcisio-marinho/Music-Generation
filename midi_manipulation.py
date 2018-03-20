@@ -1,3 +1,5 @@
+#shout out to https://github.com/dshieble/Music_RBM
+
 import midi
 import numpy as np
 

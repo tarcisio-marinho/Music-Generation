@@ -8,12 +8,17 @@ def get_files(path):
     songs = []
     for a, b, c in os.walk(path):
         for f in c:
-            songs.append(os.path.join(a, f))
-
+            song = os.path.join(a, f)
+            try:
+                n = np.array(midi_manipulation.midiToNoteStateMatrix(song))
+                songs.append(n)
+            except Exception as e:
+                print(e)
+            
     return songs
 
 
 
 if __name__ == "__main__":
-    path = "EDEN-midi/"
+    path = "EDEN-midi"
     songs = get_files(path)
