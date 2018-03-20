@@ -4,6 +4,7 @@ import numpy as np
 import msgpack
 import midi_manipulation
 import neuralnet
+import sys
 
 def get_files(path):
     songs = []
@@ -21,6 +22,7 @@ def get_files(path):
 
 
 if __name__ == "__main__":
+    print sys.argv[1]
     path = "EDEN-midi"
     songs = get_files(path)
     if(not os.path.isdir("generated")):
