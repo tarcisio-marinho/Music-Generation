@@ -22,8 +22,17 @@ def get_files(path):
 
 
 if __name__ == "__main__":
-    print sys.argv[1]
+    
+    #default directory for musics
     path = "EDEN-midi"
+    
+    if(sys.argv[1]):
+        if(os.path.isdir(sys.argv[1])):
+            path = sys.argv[1]
+        else:
+            print("{} Isn't a directory!".format(sys.argv[1]))
+            sys.exit(-1)
+        
     songs = get_files(path)
     if(not os.path.isdir("generated")):
         os.mkdir("generated")
