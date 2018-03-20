@@ -1,13 +1,16 @@
 import os
 import miditomp3
+import numpy as np
+import msgpack
 
-def listar(path):
+
+def get_files(path):
     files = os.listdir(path)
-    for f in files:
-        print(f)
+    return files
+
 
 
 if __name__ == "__main__":
-
     path = "EDEN-midi/"
-    listar(path)
+    files = get_files(path)
+    
