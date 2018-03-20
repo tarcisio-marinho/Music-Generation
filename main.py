@@ -23,7 +23,7 @@ def get_files(path):
                 n = np.array(midi_manipulation.midiToNoteStateMatrix(song))
                 songs.append(n)
             except Exception as e:
-                print(e)
+                print("error: {} on file: {}".format(e, f))
             
     return songs
 
