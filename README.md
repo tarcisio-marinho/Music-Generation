@@ -1,9 +1,23 @@
+# Piano Music Generation with RNN with tensorflow
 
+You can generate new piano music based with your prefered artists.
 
-sudo apt-get install timidity
+Pass as argument the path with the .mid files to the main.
 
-sudo apt-get install ffmpeg
+If none argument is passed, it will use the EDEN playlist.
 
-sudo pip install python-midi numpy msgpack tqdm tensorflow
+    python main.py <path>
 
-sudo pip install msgpack
+It will generate the output as .mp3 so you can listen to it!
+
+If the quality of the output isn't that good, you can feed the program with more music.
+
+# Dependencies
+
+    sudo apt-get install timidity
+
+    sudo apt-get install ffmpeg
+
+    sudo pip install python-midi numpy msgpack tqdm tensorflow
+
+    sudo pip install msgpack
