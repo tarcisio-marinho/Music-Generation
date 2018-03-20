@@ -111,4 +111,7 @@ def noteStateMatrixToMidi(statematrix, name="example", span=span):
     eot = midi.EndOfTrackEvent(tick=1)
     track.append(eot)
 
-    midi.write_midifile("{}.mid".format(name), pattern)
+    if(not ".mid" in name):
+        midi.write_midifile("{}.mid".format(name), pattern)
+    else:
+        midi.write_midifile(name, pattern)

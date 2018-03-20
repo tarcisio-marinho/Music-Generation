@@ -5,6 +5,7 @@ import msgpack
 import midi_manipulation
 import neuralnet
 import sys
+import merge
 
 def get_files(path):
     songs = []
@@ -38,3 +39,4 @@ if __name__ == "__main__":
         os.mkdir("generated")
 
     neuralnet.menu(songs)
+    merge.menu("output")
