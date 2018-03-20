@@ -6,6 +6,13 @@ import midi_manipulation
 import neuralnet
 import sys
 import merge
+import argparse
+
+parser = argparse.ArgumentParser(description='Generate Piano music.')
+parser.add_argument('-d', '--directory', type = str, required = False, metavar = '',  help = 'the music to be trained should be inside this dir, if not specified, EDEN-midi will be the input')
+parser.add_argument('-o', '--output', type = str, required = False, metavar = '',  help = 'Output music as an .mp3 file, if not specified, will be output.mp3')
+args = parser.parse_args()
+
 
 def get_files(path):
     songs = []
@@ -26,17 +33,17 @@ if __name__ == "__main__":
     
     #default directory for musics
     path = "EDEN-midi"
+    output = "output"
+
+    if(args.directory):
+        path = args.directory
     
-    if(sys.argv[1]):
-        if(os.path.isdir(sys.argv[1])):
-            path = sys.argv[1]
-        else:
-            print("{} Isn't a directory!".format(sys.argv[1]))
-            sys.exit(-1)
+    if(args.output):
+        output = args.output
         
     songs = get_files(path)
     if(not os.path.isdir("generated")):
         os.mkdir("generated")
 
     neuralnet.menu(songs)
-    merge.menu("output")
+    merge.menu(output)
