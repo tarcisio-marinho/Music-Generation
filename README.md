@@ -8,7 +8,9 @@ If none argument is passed, it will use the EDEN playlist.
 
     python main.py <path>
 
+It will generate the output as .mp3 so you can listen to it!
 
+If the quality of the output isn't that good, you can feed the program with more music.
 
 # Dependencies
 
